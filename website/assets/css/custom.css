@@ -1,0 +1,475 @@
+/* Custom styles for IDLC Framework site, overriding Minima theme */
+:root {
+  --primary-color: #2c3e50; /* Dark blue for headers and accents */
+  --secondary-color: #3498db; /* Bright blue for links and highlights */
+  --text-color: #333; /* Dark gray for body text */
+  --bg-color: #f5f6f5; /* Light gray background */
+  --card-bg: #fff; /* White for cards and sections */
+  --border-color: #ddd; /* Light border */
+  --gradient-bg: linear-gradient(135deg, #3498db, #2ecc71); /* Gradient for buttons */
+}
+
+/* General body styling */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--gradient-bg);
+  width: 0;
+  z-index: 2000;
+  transition: width 0.3s ease;
+}
+
+/* Header styling */
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative; /* For absolute positioning of star button */
+  overflow: hidden;
+}
+
+header .header-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0 auto 1rem;
+  border: 1px solid var(--border-color);
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+}
+
+header:hover .header-image {
+  transform: translateY(-10px);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  animation: fadeIn 1s ease-in;
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  animation: fadeIn 1s ease-in 0.2s forwards;
+}
+
+/* GitHub Star Button */
+.github-star-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+.github-star-button {
+  display: inline-block;
+  padding: 0.4rem 0.8rem; /* Smaller padding for compactness */
+  background: var(--gradient-bg);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem; /* Smaller font for top-right fit */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.github-star-button:hover,
+.github-star-button:focus {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.github-star-button .gh-btn {
+  background: transparent !important;
+  border: none !important;
+}
+
+.github-star-button .gh-count {
+  background: transparent !important;
+  color: #fff !important;
+}
+
+/* Navigation with logo */
+nav {
+  display: flex;
+  align-items: center;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+}
+
+.nav-logo {
+  margin: 0 1.5rem 0 1rem;
+}
+
+.logo-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-image:hover,
+.logo-image:focus {
+  transform: scale(1.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.nav-logo a:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+nav li {
+  margin: 0;
+  position: relative;
+}
+
+nav a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--secondary-color);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+nav a:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Dropdown menu for Documentation */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown[aria-expanded="true"] .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  display: block;
+}
+
+.dropdown-menu a {
+  padding: 0.75rem 1rem;
+  color: var(--primary-color);
+  display: block;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+  background-color: var(--secondary-color);
+  color: #fff;
+  transform: scale(1.02);
+}
+
+/* Author photos */
+.author-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+  margin: 0.5rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.author-photo:hover,
+.author-photo:focus {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 404 page styling */
+.page-404 {
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1s ease-in;
+}
+
+.page-404 h1 {
+  font-size: 4rem;
+  color: var(--primary-color);
+  margin: 1rem 0;
+  letter-spacing: -2px;
+  animation: bounceIn 0.8s ease-out;
+}
+
+.page-404 p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.page-404 .page-404-image {
+  width: 200px;
+  height: auto;
+  margin: 1rem auto;
+  display: block;
+  animation: bounce 2s infinite;
+}
+
+.page-404 .page-404-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem 0;
+  background: var(--gradient-bg);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-404 .page-404-button:hover,
+.page-404 .page-404-button:focus {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+/* Main content */
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  animation: fadeIn 1s ease-in;
+}
+
+article {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Headings */
+h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Links with gradient button style */
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main ul li a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  background: var(--gradient-bg);
+  color: #fff;
+  border-radius: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+main ul li a:hover,
+main ul li a:focus {
+  text-decoration: none;
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.05); }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-logo {
+    margin: 0.5rem 0;
+  }
+
+  .logo-image {
+    width: 48px;
+    height: 48px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav a {
+    padding: 0.75rem;
+  }
+
+  .dropdown-menu {
+    position: static;
+    border: none;
+    box-shadow: none;
+    background-color: #f9f9f9;
+    opacity: 1;
+    transform: none;
+  }
+
+  .author-photo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .page-404 h1 {
+    font-size: 3rem;
+  }
+
+  .page-404 .page-404-image {
+    width: 150px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  header .header-image {
+    max-height: 150px;
+  }
+
+  main {
+    margin: 1rem;
+  }
+
+  .github-star-container {
+    position: static; /* Stack below header content on mobile */
+    margin: 0.5rem auto;
+  }
+
+  .github-star-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Accessibility: Ensure focus is visible */
+:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
