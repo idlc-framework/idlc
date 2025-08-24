@@ -1,27 +1,32 @@
 <nav aria-label="Main Navigation">
   <div class="nav-logo">
-    <a href="{{ site.baseurl }}/" aria-label="IDLC Framework Home">
+    <a href="{{ '/' | relative_url }}" aria-label="IDLC Framework Home">
       <img src="{{ '/assets/images/logo.jpg' | relative_url }}" alt="IDLC Framework Logo" class="logo-image">
     </a>
   </div>
   <ul role="menubar">
-    <li role="none"><a role="menuitem" href="{{ site.baseurl }}/">Home</a></li>
-    <li role="none"><a role="menuitem" href="{{ site.baseurl }}/pages/about.html">About</a></li>
+    <li role="none"><a role="menuitem" href="{{ '/' | relative_url }}">Home</a></li>
     <li role="none" class="dropdown">
-      <a role="menuitem" href="{{ site.baseurl }}/pages/phases/index.html" aria-haspopup="true" aria-expanded="false">Phases</a>
+      <a role="menuitem" href="{{ '/pages/phases/index.html' | relative_url }}" aria-haspopup="true" aria-expanded="false">Phases</a>
       <ul role="menu" class="dropdown-menu">
-        <li role="none"><a role="menuitem" href="{{ site.baseurl }}/pages/phases/plan.html">Plan</a></li>
-        <li role="none"><a role="menuitem" href="{{ site.baseurl }}/pages/phases/code.html">Code</a></li>
-        <li role="none"><a role="menuitem" href="{{ site.baseurl }}/pages/phases/build.html">Build</a></li>
-        <li role="none"><a role="menuitem" href="{{ site.baseurl }}/pages/phases/test.html">Test</a></li>
-        <li role="none"><a role="menuitem" href="{{ site.baseurl }}/pages/phases/release.html">Release</a></li>
-        <li role="none"><a role="menuitem" href="{{ site.baseurl }}/pages/phases/deploy.html">Deploy</a></li>
-        <li role="none"><a role="menuitem" href="{{ site.baseurl }}/pages/phases/operate.html">Operate</a></li>
-        <li role="none"><a role="menuitem" href="{{ site.baseurl }}/pages/phases/monitor.html">Monitor</a></li>
+        <li role="none"><a role="menuitem" href="{{ '/pages/phases/plan.html' | relative_url }}">Plan</a></li>
+        <li role="none"><a role="menuitem" href="{{ '/pages/phases/code.html' | relative_url }}">Code</a></li>
+        <li role="none"><a role="menuitem" href="{{ '/pages/phases/build.html' | relative_url }}">Build</a></li>
+        <li role="none"><a role="menuitem" href="{{ '/pages/phases/test.html' | relative_url }}">Test</a></li>
+        <li role="none"><a role="menuitem" href="{{ '/pages/phases/release.html' | relative_url }}">Release</a></li>
+        <li role="none"><a role="menuitem" href="{{ '/pages/phases/deploy.html' | relative_url }}">Deploy</a></li>
+        <li role="none"><a role="menuitem" href="{{ '/pages/phases/operate.html' | relative_url }}">Operate</a></li>
+        <li role="none"><a role="menuitem" href="{{ '/pages/phases/monitor.html' | relative_url }}">Monitor</a></li>
       </ul>
+    <li role="none" class="dropdown">
+        <a role="menuitem" href="{{ '/pages/about.html' | relative_url }}" aria-haspopup="true" aria-expanded="false">About</a>
+        <ul role="menu" class="dropdown-menu">
+          <li role="none"><a role="menuitem" href="{{ '/pages/about.html' | relative_url }}">About</a></li>
+          <li role="none"><a role="menuitem" href="{{ '/pages/authors.html' | relative_url }}">Authors</a></li>
+          <li role="none"><a role="menuitem" href="{{ '/pages/contributors.html' | relative_url }}">Contributors</a></li>
+          <li role="none"><a role="menuitem" href="{{ '/pages/contact.html' | relative_url }}">Contact</a></li>
+        </ul>
+      </li>
     </li>
-    <li role="none"><a role="menuitem" href="{{ site.baseurl }}/pages/authors.html">Authors</a></li>
-    <li role="none"><a role="menuitem" href="{{ site.baseurl }}/pages/contributors.html">Contributors</a></li>
-    <li role="none"><a role="menuitem" href="{{ site.baseurl }}/pages/contact.html">Contact</a></li>
   </ul>
 </nav>
