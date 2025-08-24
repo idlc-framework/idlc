@@ -1,7 +1,7 @@
 title: IDLC Framework
 description: Infrastructure as Code Development Lifecycle - Applying software best practices to infrastructure management.
 baseurl: "/idlc"  # Change if repo is not root, e.g., "/idlc"
-url: "https://denoca.github.io/"  # e.g., "https://denoca.github.io"
+url: "https://idlc-framework.github.io/"  # e.g., "https://idlc-framewoek.github.io"
 theme: minima
 plugins:
   - jekyll-seo-tag  # For SEO meta tags
@@ -11,7 +11,7 @@ plugins:
 minima:
   skin: auto  # Responsive, light/dark mode
   social_links:
-    github: denoca/idlc  # Replace
+    github: idlc-framework/idlc  # Replace
 
 # Defaults for pages
 defaults:
