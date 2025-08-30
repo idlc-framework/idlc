@@ -1,0 +1,94 @@
+---
+layout: default
+title: IDLC Phases Overview
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDLC Phases Overview</title>
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+</head>
+<body>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" style="text-align: center; padding: 3rem 1rem; background: var(--gradient-bg); color: #fff; animation: fadeIn 1s ease-in;">
+      <h1>IDLC Phases</h1>
+      <p style="font-size: 1.2rem; max-width: 600px; margin: 1rem auto; opacity: 0.9;">
+        Explore the eight phases of the Infrastructure Development Lifecycle (IDLC), designed to streamline infrastructure management from planning to monitoring.
+      </p>
+      <a href="#phases" class="cta-button" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--card-bg); color: var(--primary-color); border-radius: 4px; text-decoration: none; font-weight: 500; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        View Phases
+      </a>
+    </section>
+
+    <!-- Phases Section -->
+    <section id="phases" class="phases-section" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
+      <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 2rem;">The IDLC Lifecycle</h2>
+      <div class="phase-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+        <!-- Phase 1: Plan -->
+        <article class="phase-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeIn 1s ease-in 0.1s forwards; opacity: 0;">
+          <h3 style="color: var(--primary-color); margin-top: 0;">Plan</h3>
+          <p>Define infrastructure requirements, set goals, and create blueprints for scalable, secure systems with collaborative input from distributed teams.</p>
+          <a href="{{ '/pages/phases/v0.1/plan.html' | relative_url }}" class="phase-link" style="color: var(--secondary-color); text-decoration: none; font-weight: 500;">Learn More</a>
+        </article>
+        <!-- Phase 2: Code -->
+        <article class="phase-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeIn 1s ease-in 0.2s forwards; opacity: 0;">
+          <h3 style="color: var(--primary-color); margin-top: 0;">Code</h3>
+          <p>Write infrastructure as code using version-controlled templates, enabling consistency and collaboration across global teams.</p>
+          <a href="{{ '/pages/phases/v0.1/code.html' | relative_url }}" class="phase-link" style="color: var(--secondary-color); text-decoration: none; font-weight: 500;">Learn More</a>
+        </article>
+        <!-- Phase 3: Build -->
+        <article class="phase-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeIn 1s ease-in 0.3s forwards; opacity: 0;">
+          <h3 style="color: var(--primary-color); margin-top: 0;">Build</h3>
+          <p>Automate the creation of infrastructure components, ensuring repeatable and error-free builds across environments.</p>
+          <a href="{{ '/pages/phases/v0.1/build.html' | relative_url }}" class="phase-link" style="color: var(--secondary-color); text-decoration: none; font-weight: 500;">Learn More</a>
+        </article>
+        <!-- Phase 4: Test -->
+        <article class="phase-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeIn 1s ease-in 0.4s forwards; opacity: 0;">
+          <h3 style="color: var(--primary-color); margin-top: 0;">Test</h3>
+          <p>Validate infrastructure with automated tests to ensure compliance, security, and performance before deployment.</p>
+          <a href="{{ '/pages/phases/v0.1/test.html' | relative_url }}" class="phase-link" style="color: var(--secondary-color); text-decoration: none; font-weight: 500;">Learn More</a>
+        </article>
+        <!-- Phase 5: Release -->
+        <article class="phase-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeIn 1s ease-in 0.5s forwards; opacity: 0;">
+          <h3 style="color: var(--primary-color); margin-top: 0;">Release</h3>
+          <p>Package and version infrastructure modules for reliable, controlled releases with rollback capabilities.</p>
+          <a href="{{ '/pages/phases/v0.1/release.html' | relative_url }}" class="phase-link" style="color: var(--secondary-color); text-decoration: none; font-weight: 500;">Learn More</a>
+        </article>
+        <!-- Phase 6: Deploy -->
+        <article class="phase-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeIn 1s ease-in 0.6s forwards; opacity: 0;">
+          <h3 style="color: var(--primary-color); margin-top: 0;">Deploy</h3>
+          <p>Automate zero-touch deployments to production, ensuring consistency and minimizing human error.</p>
+          <a href="{{ '/pages/phases/v0.1/deploy.html' | relative_url }}" class="phase-link" style="color: var(--secondary-color); text-decoration: none; font-weight: 500;">Learn More</a>
+        </article>
+        <!-- Phase 7: Operate -->
+        <article class="phase-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeIn 1s ease-in 0.7s forwards; opacity: 0;">
+          <h3 style="color: var(--primary-color); margin-top: 0;">Operate</h3>
+          <p>Manage and maintain infrastructure with automated operations, ensuring high availability and performance.</p>
+          <a href="{{ '/pages/phases/v0.1/operate.html' | relative_url }}" class="phase-link" style="color: var(--secondary-color); text-decoration: none; font-weight: 500;">Learn More</a>
+        </article>
+        <!-- Phase 8: Monitor -->
+        <article class="phase-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeIn 1s ease-in 0.8s forwards; opacity: 0;">
+          <h3 style="color: var(--primary-color); margin-top: 0;">Monitor</h3>
+          <p>Continuously monitor infrastructure health, performance, and security with real-time insights and alerts.</p>
+          <a href="{{ '/pages/phases/v0.1/monitor.html' | relative_url }}" class="phase-link" style="color: var(--secondary-color); text-decoration: none; font-weight: 500;">Learn More</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" style="text-align: center; padding: 2rem 1rem; background: var(--primary-color); color: #fff;">
+      <h2>Dive into the IDLC Phases</h2>
+      <p style="font-size: 1.1rem; max-width: 600px; margin: 1rem auto;">
+        Select a version and explore detailed guides for each phase of the IDLC Framework.
+      </p>
+      <a href="{{ '/pages/phases/v0.1/index.html' | relative_url }}" class="cta-button" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--gradient-bg); color: #fff; border-radius: 4px; text-decoration: none; font-weight: 500; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        Get Started
+      </a>
+    </section>
+  </main>
+  <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
+</body>
+</html>

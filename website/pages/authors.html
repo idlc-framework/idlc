@@ -1,0 +1,127 @@
+---
+layout: default
+title: Core Authors - IDLC Framework
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Authors - IDLC Framework</title>
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+  <!-- Primary Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Fallback local Font Awesome CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/fontawesome.min.css' | relative_url }}" media="print" onload="this.media='all'" />
+  <style>
+    .authors-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .author-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .author-link {
+      color: #000000; /* Black for normal state */
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .author-link i {
+      font-size: 1.2rem;
+    }
+    .author-link:hover,
+    .author-link:focus {
+      color: var(--primary-color); /* Blue on hover */
+      transform: scale(1.1);
+    }
+    @media (max-width: 600px) {
+      .authors-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" style="text-align: center; padding: 3rem 1rem; background: var(--gradient-bg); color: #fff; animation: fadeIn 1s ease-in;">
+      <h1>Meet the Core Authors</h1>
+      <p style="font-size: 1.2rem; max-width: 600px; margin: 1rem auto; opacity: 0.9;">
+        The IDLC Framework was created by a dedicated team of experts in Infrastructure as Code and DevOps practices.
+      </p>
+    </section>
+
+    <!-- Authors Section -->
+    <section class="authors-section" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
+      <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 2rem;">Our Founders</h2>
+      <div class="authors-grid">
+        <!-- Author 1: Denner Padilha -->
+        <article class="author-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeIn 1s ease-in 0.1s forwards; opacity: 0;">
+          <img src="{{ '/assets/images/1723134551479.jpeg' | relative_url }}" alt="Denner Padilha" class="author-photo">
+          <h3 style="color: var(--primary-color); margin-top: 1rem;">Denner Padilha</h3>
+          <p style="font-style: italic; color: var(--text-color); margin: 0.5rem 0;">Director IT Operations & Security</p>
+          <p>Creator of IDLC, expert in Infrastructure as Code, driving scalable and secure DevOps solutions.</p>
+          <div class="author-links">
+            <a href="https://github.com/denoca" class="author-link" aria-label="Denner Padilha's GitHub Profile" data-icon="github"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/denner-bitti/" class="author-link" aria-label="Denner Padilha's LinkedIn Profile" data-icon="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          </div>
+        </article>
+        <!-- Author 2: Henrique Petenucci -->
+        <article class="author-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeIn 1s ease-in 0.2s forwards; opacity: 0;">
+          <img src="{{ '/assets/images/henriquep.png' | relative_url }}" alt="Henrique Petenucci" class="author-photo">
+          <h3 style="color: var(--primary-color); margin-top: 1rem;">Henrique Petenucci</h3>
+          <p style="font-style: italic; color: var(--text-color); margin: 0.5rem 0;">DevOps Manager</p>
+          <p>Creator of IDLC, expert in Infrastructure as Code, specializing in automated and collaborative workflows.</p>
+          <div class="author-links">
+            <a href="https://github.com/henrique-pettenuci" class="author-link" aria-label="Henrique Petenucci's GitHub Profile" data-icon="github"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/hpettenuci/" class="author-link" aria-label="Henrique Petenucci's LinkedIn Profile" data-icon="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          </div>
+        </article>
+        <!-- Author 3: Mario Costa -->
+        <article class="author-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeIn 1s ease-in 0.2s forwards; opacity: 0;">
+          <img src="{{ '/assets/images/marioc.jpeg' | relative_url }}" alt="Mario Costa" class="author-photo">
+          <h3 style="color: var(--primary-color); margin-top: 1rem;">Mario Costa</h3>
+          <p style="font-style: italic; color: var(--text-color); margin: 0.5rem 0;">DevOps Engineer</p>
+          <p>Creator of IDLC, expert in Infrastructure as Code, specializing in automated and collaborative workflows.</p>
+          <div class="author-links">
+            <a href="https://github.com/author2" class="author-link" aria-label="Mario Costa's GitHub Profile" data-icon="github"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://linkedin.com/in/author2" class="author-link" aria-label="Mario Costa's LinkedIn Profile" data-icon="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          </div>
+        </article>
+        <!-- Author 4: Rafael Ferreira -->
+        <article class="author-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeIn 1s ease-in 0.2s forwards; opacity: 0;">
+          <img src="{{ '/assets/images/rafaelf.jpeg' | relative_url }}" alt="Rafael Ferreira" class="author-photo">
+          <h3 style="color: var(--primary-color); margin-top: 1rem;">Rafel Ferreira</h3>
+          <p style="font-style: italic; color: var(--text-color); margin: 0.5rem 0;">DevOps Engineer</p>
+          <p>Creator of IDLC, expert in Infrastructure as Code, specializing in automated and collaborative workflows.</p>
+          <div class="author-links">
+            <a href="https://github.com/author2" class="author-link" aria-label="Rafael Ferreiras's GitHub Profile" data-icon="github"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://linkedin.com/in/author2" class="author-link" aria-label="Rafael Ferreira's LinkedIn Profile" data-icon="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" style="text-align: center; padding: 2rem 1rem; background: var(--primary-color); color: #fff;">
+      <h2>Join the IDLC Community</h2>
+      <p style="font-size: 1.1rem; max-width: 600px; margin: 1rem auto;">
+        Collaborate with our authors and contribute to the future of infrastructure management.
+      </p>
+      <a href="https://github.com/idlc-framework/idlc" class="cta-button" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--gradient-bg); color: #fff; border-radius: 4px; text-decoration: none; font-weight: 500; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        Contribute on GitHub
+      </a>
+    </section>
+  </main>
+  <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
+</body>
+</html>

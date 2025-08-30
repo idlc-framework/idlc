@@ -39,7 +39,7 @@ header {
   text-align: center;
   padding: 1rem;
   margin-bottom: 1rem;
-  position: relative; /* For absolute positioning of star button */
+  position: relative;
   overflow: hidden;
 }
 
@@ -76,20 +76,20 @@ header p {
 /* GitHub Star Button */
 .github-star-container {
   position: absolute;
-  top: 1rem;
+  top: 0.5rem;
   right: 1rem;
   z-index: 1000;
 }
 
 .github-star-button {
   display: inline-block;
-  padding: 0.4rem 0.8rem; /* Smaller padding for compactness */
+  padding: 0.4rem 0.8rem;
   background: var(--gradient-bg);
   color: #fff;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.9rem; /* Smaller font for top-right fit */
+  font-size: 0.9rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -116,23 +116,26 @@ nav {
   background-color: var(--card-bg);
   border-bottom: 1px solid var(--border-color);
   padding: 0.5rem 1rem;
+  position: relative;
 }
 
 .nav-logo {
   margin: 0 1.5rem 0 1rem;
 }
 
-.logo-image {
-  width: 60px;
-  height: 60px;
+.nav-logo .logo-image {
+  width: 60px !important; /* Fixed size, high specificity */
+  height: 60px !important; /* Fixed size, high specificity */
+  min-width: 60px; /* Prevent compression */
+  min-height: 60px; /* Prevent compression */
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain; /* Preserve aspect ratio */
   border: 2px solid var(--border-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.logo-image:hover,
-.logo-image:focus {
+.nav-logo .logo-image:hover,
+.nav-logo .logo-image:focus {
   transform: scale(1.15);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
@@ -142,14 +145,25 @@ nav {
   outline-offset: 2px;
 }
 
+/* Navigation alignment */
+.nav-left {
+  margin-right: auto;
+}
+
+.nav-right {
+  margin-left: auto;
+}
+
+.nav-center {
+  margin: 0 auto;
+}
+
 nav ul {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-grow: 1;
+  align-items: center;
 }
 
 nav li {
@@ -178,7 +192,92 @@ nav a:focus {
   outline-offset: 2px;
 }
 
-/* Dropdown menu for Documentation */
+/* Version dropdown */
+.version-dropdown select {
+  padding: 0.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--primary-color);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.version-dropdown select:hover,
+.version-dropdown select:focus {
+  background: var(--gradient-bg);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.version-dropdown select:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Highlighted Phases menu */
+nav .highlight a {
+  background: var(--secondary-color);
+  color: #fff;
+  font-weight: 500;
+  padding: 0.8rem 1.3rem;
+  border-radius: 4px;
+  transform: scale(1);
+  animation: none;
+}
+
+nav .highlight a:hover,
+nav .highlight a:focus {
+  background: var(--gradient-bg);
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Phases horizontal menu */
+.phases {
+  display: flex;
+  align-items: center;
+}
+
+.phases-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  min-width: auto;
+  z-index: 1000;
+  opacity: 1;
+  flex-wrap: nowrap;
+  padding: 0.75rem;
+}
+
+.phases-menu li {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.phases-menu a {
+  padding: 0.5rem 0.75rem;
+  color: var(--primary-color);
+  display: block;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.phases-menu a:hover,
+.phases-menu a:focus {
+  background-color: var(--secondary-color);
+  color: #fff;
+  transform: scale(1.02);
+}
+
+/* Dropdown menu for About */
 .dropdown {
   position: relative;
 }
@@ -394,6 +493,12 @@ footer a {
   60% { transform: translateY(-5px); }
 }
 
+@keyframes pulse {
+  0% { transform: scale(1.1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1.1); }
+}
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
   nav {
@@ -405,9 +510,12 @@ footer a {
     margin: 0.5rem 0;
   }
 
-  .logo-image {
-    width: 48px;
-    height: 48px;
+  .nav-left,
+  .nav-right,
+  .nav-center {
+    margin: 0;
+    width: 100%;
+    text-align: center;
   }
 
   nav ul {
@@ -417,6 +525,29 @@ footer a {
 
   nav a {
     padding: 0.75rem;
+  }
+
+  nav .highlight a {
+    padding: 0.6rem 1rem;
+    transform: scale(1);
+  }
+
+  .version-dropdown select {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  .phases-menu {
+    flex-direction: column;
+    border: none;
+    box-shadow: none;
+    background-color: #f9f9f9;
+    gap: 0.25rem;
+  }
+
+  .phases-menu a {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
   }
 
   .dropdown-menu {
@@ -458,7 +589,7 @@ footer a {
   }
 
   .github-star-container {
-    position: static; /* Stack below header content on mobile */
+    position: static;
     margin: 0.5rem auto;
   }
 

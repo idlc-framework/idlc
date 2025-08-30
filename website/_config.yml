@@ -3,6 +3,7 @@ description: Infrastructure as Code Development Lifecycle - Applying software be
 baseurl: "/idlc"  # Change if repo is not root, e.g., "/idlc"
 url: "https://idlc-framework.github.io/"  # e.g., "https://idlc-framewoek.github.io"
 theme: minima
+includes_dir: _includes
 plugins:
   - jekyll-seo-tag  # For SEO meta tags
 
