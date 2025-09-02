@@ -1,7 +1,7 @@
 title: IDLC Framework
 description: Infrastructure as Code Development Lifecycle - Applying software best practices to infrastructure management.
-baseurl: "/idlc"  # Change if repo is not root, e.g., "/idlc"
-url: "https://idlc-framework.github.io/"  # e.g., "https://idlc-framewoek.github.io"
+baseurl: ""  # Change if repo is not root, e.g., "/idlc"
+url: "https://idlc-framework.org"  # e.g., "https://idlc-framewoek.github.io"
 theme: minima
 includes_dir: _includes
 plugins:
