@@ -1,4 +1,3 @@
-// Smooth scroll for internal links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -9,29 +8,66 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Toggle aria-expanded for dropdowns
 const dropdowns = document.querySelectorAll('.dropdown');
 dropdowns.forEach(dropdown => {
-  const toggle = dropdown.querySelector('a[aria-haspopup="true"]');
+  const toggle = dropdown.querySelector('.dropdown-toggle');
   if (toggle) {
     toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation(); // Prevent click from bubbling to main menu
       const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      // Close other dropdowns
+      dropdowns.forEach(otherDropdown => {
+        const otherToggle = otherDropdown.querySelector('.dropdown-toggle');
+        if (otherToggle && otherToggle !== toggle) {
+          otherToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
       toggle.setAttribute('aria-expanded', !isExpanded);
     });
   }
-});
-
-// Close dropdown when clicking outside
-document.addEventListener('click', function(e) {
-  dropdowns.forEach(dropdown => {
-    const toggle = dropdown.querySelector('a[aria-haspopup="true"]');
-    if (toggle && !dropdown.contains(e.target)) {
-      toggle.setAttribute('aria-expanded', 'false');
-    }
+  // Allow submenu links to navigate
+  const submenuLinks = dropdown.querySelectorAll('.dropdown-menu a');
+  submenuLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent submenu click from closing main menu
+    });
   });
 });
 
-// Scroll progress indicator
+const menuToggle = document.querySelector('.menu-toggle');
+const mainMenu = document.querySelector('.main-menu');
+if (menuToggle && mainMenu) {
+  menuToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    mainMenu.setAttribute('aria-expanded', !isExpanded);
+    // Close all dropdowns when main menu is toggled
+    if (!isExpanded) {
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        if (toggle) {
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!mainMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      mainMenu.setAttribute('aria-expanded', 'false');
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        if (toggle) {
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  });
+}
+
 const progressBar = document.createElement('div');
 progressBar.className = 'scroll-progress';
 document.body.prepend(progressBar);
@@ -42,40 +78,32 @@ window.addEventListener('scroll', () => {
   progressBar.style.width = `${progress}%`;
 });
 
-// Version selector for phase pages
 const versionSelector = document.getElementById('version-selector');
 if (versionSelector) {
-  // Get baseurl from hidden span
   const baseurlElement = document.getElementById('baseurl');
   const baseurl = baseurlElement ? baseurlElement.textContent : '/';
 
-  // Initialize version from localStorage or default to 'v0.1'
   const savedVersion = localStorage.getItem('selectedVersion') || 'v0.1';
   versionSelector.value = savedVersion;
   updatePhaseLinks(savedVersion);
 
-  // Update links and refresh page on version change
   versionSelector.addEventListener('change', function() {
     const version = this.value;
     localStorage.setItem('selectedVersion', version);
     updatePhaseLinks(version);
 
-    // Redirect to the corresponding versioned page
     const currentPath = window.location.pathname;
     const phaseMatch = currentPath.match(/\/pages\/phases\/[^/]+\/(.*\.html)$/);
     if (phaseMatch) {
-      // If on a phase page, redirect to the same phase with the new version
       const phasePage = phaseMatch[1];
       window.location.href = `${baseurl}pages/phases/${version}/${phasePage}`;
     } else {
-      // Otherwise, redirect to the Phases index for the selected version
       window.location.href = `${baseurl}pages/phases/${version}/index.html`;
     }
   });
 
-  // Update phase links function
   function updatePhaseLinks(version) {
-    const phaseLinks = document.querySelectorAll('.phase-link');
+    const phaseLinks = document.querySelectorAll('.phase-list a');
     phaseLinks.forEach(link => {
       const basePath = link.getAttribute('href').replace(/\/pages\/phases\/[^/]+/, `/pages/phases/${version}`);
       link.setAttribute('href', basePath);

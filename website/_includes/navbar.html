@@ -1,46 +1,52 @@
-<nav aria-label="Main Navigation">
-  <span id="baseurl" style="display: none;">{{ '/' | relative_url }}</span>
-  <div class="nav-logo">
-    <a href="{{ '/' | relative_url }}" aria-label="IDLC Framework Home">
-      <img src="{{ '/assets/images/logo.jpg' | relative_url }}" alt="IDLC Framework Logo" class="logo-image">
-    </a>
-  </div>
+<nav aria-label="Main navigation">
+  <a class="nav-logo" href="{{ '/' | relative_url }}">
+    <img class="logo-image" src="{{ '/assets/images/logo.jpg' | relative_url }}" alt="IDLC Framework Logo">
+  </a>
   <div class="nav-left">
-    <ul role="menubar">
-      <li role="none"><a role="menuitem" href="{{ '/' | relative_url }}">Home</a></li>
+    <ul>
+      <li><a class="highlight" href="{{ '/' | relative_url }}">Home</a></li>
     </ul>
   </div>
-  <!-- <ul role="menubar" class="nav-center">
-    <li role="none" class="dropdown version-dropdown">
-      <select id="version-selector" aria-label="Select Version">
-        <option value="v1.0" >v1.0 - soon</option>
-        <option value="v0.1" selected >v0.1 - Latest</option>
-      </select>
-    </li> -->
-    <li role="none" class="phases highlight">
-      <ul role="menu" class="phases-menu">
-        <li role="none"><a role="menuitem" href="{{ '/pages/phases/v0.1/plan.html' | relative_url }}" class="phase-link">Plan</a></li>
-        <li role="none"><a role="menuitem" href="{{ '/pages/phases/v0.1/code.html' | relative_url }}" class="phase-link">Code</a></li>
-        <li role="none"><a role="menuitem" href="{{ '/pages/phases/v0.1/build.html' | relative_url }}" class="phase-link">Build</a></li>
-        <li role="none"><a role="menuitem" href="{{ '/pages/phases/v0.1/test.html' | relative_url }}" class="phase-link">Test</a></li>
-        <li role="none"><a role="menuitem" href="{{ '/pages/phases/v0.1/release.html' | relative_url }}" class="phase-link">Release</a></li>
-        <li role="none"><a role="menuitem" href="{{ '/pages/phases/v0.1/deploy.html' | relative_url }}" class="phase-link">Deploy</a></li>
-        <li role="none"><a role="menuitem" href="{{ '/pages/phases/v0.1/operate.html' | relative_url }}" class="phase-link">Operate</a></li>
-        <li role="none"><a role="menuitem" href="{{ '/pages/phases/v0.1/monitor.html' | relative_url }}" class="phase-link">Monitor</a></li>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Toggle navigation">
+    Menu
+  </button>
+
+  <div class="main-menu" id="main-menu">
+
+
+    <div class="nav-center">
+      <ul class="phases-menu">
+        <li class="phase-group">
+          <span class="phase-group-label">Development</span>
+          <ul class="phase-list">
+            <li><a href="{{ '/pages/phases/v0.1/code.html' | relative_url }}">Code</a></li>
+            <li><a href="{{ '/pages/phases/v0.1/build.html' | relative_url }}">Build</a></li>
+            <li><a href="{{ '/pages/phases/v0.1/test.html' | relative_url }}">Test</a></li>
+            <li><a href="{{ '/pages/phases/v0.1/release.html' | relative_url }}">Release</a></li>
+            <li><a href="{{ '/pages/phases/v0.1/deploy.html' | relative_url }}">Deploy</a></li>
+          </ul>
+        </li>
+        <li class="phase-group">
+          <span class="phase-group-label">Operations</span>
+          <ul class="phase-list">
+            <li><a href="{{ '/pages/phases/v0.1/operate.html' | relative_url }}">Operate</a></li>
+            <li><a href="{{ '/pages/phases/v0.1/monitor.html' | relative_url }}">Monitor</a></li>
+          </ul>
+        </li>
       </ul>
-    </li>
-  </ul>
-  <div class="nav-right">
-    <ul role="menubar">
-      <li role="none" class="dropdown">
-        <a role="menuitem" href="{{ '/pages/about.html' | relative_url }}" aria-haspopup="true" aria-expanded="false">About</a>
-        <ul role="menu" class="dropdown-menu">
-          <li role="none"><a role="menuitem" href="{{ '/pages/about.html' | relative_url }}">About</a></li>
-          <li role="none"><a role="menuitem" href="{{ '/pages/authors.html' | relative_url }}" class="phase-link">Authors</a></li>
-          <li role="none"><a role="menuitem" href="{{ '/pages/contributors.html' | relative_url }}" class="phase-link">Contributors</a></li>
-          <li role="none"><a role="menuitem" href="{{ '/pages/contact.html' | relative_url }}" class="phase-link">Contact</a></li>
-        </ul>
-      </li>
-    </ul>
+    </div>
+
+    <div class="nav-right">
+      <ul>
+        <li class="dropdown">
+          <a role="menuitem" href="{{ '/pages/about.html' | relative_url }}" aria-haspopup="true" aria-expanded="false">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ '/pages/authors.html' | relative_url }}">Authors</a></li>
+            <li><a href="{{ '/pages/contributors.html' | relative_url }}">Contributors</a></li>
+            <li><a href="{{ '/pages/contact.html' | relative_url }}">Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

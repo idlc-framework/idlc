@@ -6,6 +6,7 @@ theme: minima
 includes_dir: _includes
 plugins:
   - jekyll-seo-tag  # For SEO meta tags
+permalink: pretty
 
 
 # Minima theme settings
