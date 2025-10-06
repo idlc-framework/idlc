@@ -3,8 +3,6 @@ title: Code Phase
 layout: page
 ---
 
-# IDLC Phase 1: Code
-
 The **Code** phase is where you *author* the three code constructs used throughout IDLC: **Modules**, **Blueprints**, and **Deployments**.
 
 ---
@@ -16,7 +14,7 @@ The **Code** phase is where you *author* the three code constructs used througho
 
 - **Blueprints** — opinionated compositions of modules and/or resources that make up a service (e.g., DB + S3 + CloudWatch). Blueprints **should not be entirely configurable**; they enforce characteristics such as versions and policies.
 
-- **Deployments** — environment-specific definitions that **instantiate blueprints** (e.g., Stage, Production). This directory holds configuration for where/how a blueprint runs. fileciteturn1file0L33-L35 fileciteturn1file3L21-L33
+- **Deployments** — environment-specific definitions that **instantiate blueprints** (e.g., Stage, Production). This directory holds configuration for where/how a blueprint runs.
 
 ---
 
