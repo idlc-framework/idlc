@@ -191,6 +191,28 @@ nav a:focus {
   transform: scale(1.05);
 }
 
+.nav-utility-links {
+  gap: 0.85rem;
+}
+
+.nav-utility-links > li > a {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  color: var(--heading-color);
+  background: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-utility-links > li > a:hover,
+.nav-utility-links > li > a:focus {
+  color: #fff;
+  background: var(--secondary-color);
+}
+
 nav a:focus {
   outline: 2px solid var(--secondary-color);
   outline-offset: 2px;

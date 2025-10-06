@@ -3,8 +3,6 @@ title: Stack Set
 layout: page
 ---
 
-# Stack Set Tools
-
 This page provides an overview of the key infrastructure tools used in our Stack Set workflow. Each tool serves a specific purpose in managing, documenting, and automating our IaC-based infrastructure.
 
 ## Terrareg

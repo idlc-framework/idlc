@@ -2,7 +2,6 @@
 title: Glossary
 layout: page
 ---
-# Glossary
 
 Find here some of the terms or acronyms that you may find while navigating the IDLC Framework.
 

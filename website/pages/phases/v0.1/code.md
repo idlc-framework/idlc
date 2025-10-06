@@ -3,10 +3,6 @@ title: Code Phase
 layout: page
 ---
 
-The **Code** phase is where you *author* the three code constructs used throughout IDLC: **Modules**, **Blueprints**, and **Deployments**.
-
----
-
 ## Core Concepts
 
 - **Modules** — the smallest reusable unit that defines a cloud resource (e.g., S3 bucket). They are reused by other modules and/or blueprints.
