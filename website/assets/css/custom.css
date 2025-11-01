@@ -213,6 +213,133 @@ nav a:focus {
   background: var(--secondary-color);
 }
 
+/* Stackset page */
+.stackset-hero {
+  margin: 0 auto 2.5rem;
+  max-width: 48rem;
+  text-align: center;
+}
+
+.stackset-hero h2 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.stackset-hero p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.stackset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+.stackset-card {
+  position: relative;
+  padding: 1.8rem 1.6rem;
+  border-radius: 18px;
+  background: linear-gradient(160deg, rgba(44, 62, 80, 0.08), rgba(52, 152, 219, 0.08));
+  border: 1px solid rgba(44, 62, 80, 0.12);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stackset-card:hover,
+.stackset-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 40px rgba(15, 23, 42, 0.14);
+}
+
+.stackset-card-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.stackset-card h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: var(--heading-color);
+}
+
+.stackset-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+.stackset-card ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.stackset-card li + li {
+  margin-top: 0.35rem;
+}
+
+.stackset-link {
+  align-self: flex-start;
+  margin-top: auto;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stackset-link::after {
+  content: '\2192';
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.stackset-link:hover,
+.stackset-link:focus {
+  color: var(--primary-color);
+}
+
+.stackset-link:hover::after,
+.stackset-link:focus::after {
+  transform: translateX(4px);
+}
+
+.stackset-footer {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.stackset-footer h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.stackset-footer p {
+  font-size: 1.05rem;
+}
+
+@media (max-width: 600px) {
+  .stackset-card {
+    padding: 1.5rem 1.3rem;
+  }
+
+  .stackset-card-logo {
+    width: 48px;
+    height: 48px;
+  }
+}
+
 nav a:focus {
   outline: 2px solid var(--secondary-color);
   outline-offset: 2px;
