@@ -19,6 +19,8 @@ The IDLC framework relies on a curated set of tools that keep Terraform modules 
 | [Atlantis]({{ site.baseurl }}/stackset/atlantis/) | GitOps — plan and apply infrastructure from pull requests |
 | [release-please]({{ site.baseurl }}/stackset/release-please/) | Automated versioning — changelogs and semantic tags from commits |
 | [terraform-docs]({{ site.baseurl }}/stackset/terraform-docs/) | Auto documentation — generate README from module inputs/outputs |
+| [Pre-commit Hooks]({{ site.baseurl }}/stackset/pre-commit/) | Code quality — enforce formatting, linting, and docs on every commit |
+| [Release Automation]({{ site.baseurl }}/stackset/release-automation/) | CI/CD — automated versioning and registry publishing workflows |
 
 ## Operational Rhythm
 

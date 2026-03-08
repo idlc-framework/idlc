@@ -1,26 +1,19 @@
 title: IDLC Framework
-description: Infrastructure as Code Development Lifecycle - Applying software best practices to infrastructure management.
-baseurl: ""  # Change if repo is not root, e.g., "/idlc"
-url: "https://idlc-framework.org"  # e.g., "https://idlc-framewoek.github.io"
-theme: minima
-includes_dir: _includes
+description: "Infrastructure as Code Development Lifecycle — From Zero to Zero Touch"
+baseurl: ""
+url: "https://idlc-framework.org"
 plugins:
-  - jekyll-seo-tag  # For SEO meta tags
+  - jekyll-seo-tag
 
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .DS_Store
 
-# Minima theme settings
-minima:
-  skin: auto  # Responsive, light/dark mode
-  social_links:
-    github: idlc-framework/idlc  # Replace
-
-# Defaults for pages
 defaults:
   - scope:
       path: ""
     values:
-      layout: default
-  - scope:
-      path: "pages/phases"
-    values:
-      layout: page
+      layout: null

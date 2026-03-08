@@ -1,83 +1,529 @@
 ---
-layout: default
-title: IDLC Framework - Infrastructure Development Lifecycle
+layout: null
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IDLC Framework - Infrastructure Development Lifecycle</title>
-  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+  <title>IDLC Framework — From Zero to Zero Touch</title>
+  <meta name="description" content="Infrastructure Development Lifecycle Framework. Apply software development best practices to infrastructure management.">
+  <link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
 </head>
 <body>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero" style="text-align: center; padding: 3rem 1rem; background: var(--gradient-bg); color: #fff; animation: fadeIn 1s ease-in;">
-      <h1>Welcome to the IDLC Framework</h1>
-      <p style="font-size: 1.2rem; max-width: 600px; margin: 1rem auto; opacity: 0.9;">
-        Streamline your infrastructure management with the Infrastructure Development Lifecycle (IDLC) Framework, designed for modern, scalable, and secure DevOps practices.
-      </p>
-      <a href="{{ '/pages/phases.html' | relative_url }}" class="cta-button" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--card-bg); color: var(--primary-color); border-radius: 4px; text-decoration: none; font-weight: 500; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-        Explore the Phases
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="IDLC Framework Home">
+        <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="IDLC Logo" class="nav-logo-img">
+        <span>IDLC</span>
       </a>
-    </section>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="#features" role="menuitem">Features</a></li>
+        <li role="none"><a href="#how-it-works" role="menuitem">How It Works</a></li>
+        <li role="none"><a href="#phases" role="menuitem">Phases</a></li>
+        <li role="none"><a href="#toolchain" role="menuitem">Toolchain</a></li>
+        <li role="none"><a href="#cloud" role="menuitem">Cloud</a></li>
+        <li role="none"><a href="https://idlc-framework.github.io/idlc/docs/" class="nav-btn" role="menuitem">Documentation</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- Features Section -->
-    <section class="features" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
-      <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 2rem;">Why Choose IDLC?</h2>
-      <div class="feature-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-        <!-- Feature 1: Infrastructure as Code -->
-        <article class="feature-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <h3 style="color: var(--primary-color); margin-top: 0;">Infrastructure as Code with Distributed Teams</h3>
-          <p>IDLC enables large, distributed teams to manage infrastructure as code, ensuring consistency, collaboration, and version-controlled workflows across global environments.</p>
-        </article>
-        <!-- Feature 2: Zero Touch on Production -->
-        <article class="feature-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <h3 style="color: var(--primary-color); margin-top: 0;">Zero Touch on Production</h3>
-          <p>Automate deployments with zero manual intervention in production, reducing errors and ensuring reliable, repeatable processes.</p>
-        </article>
-        <!-- Feature 3: Infrastructure Modules Versioning -->
-        <article class="feature-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <h3 style="color: var(--primary-color); margin-top: 0;">Best-in-Class Modules Versioning</h3>
-          <p>Leverage robust versioning for infrastructure modules, enabling seamless updates, rollbacks, and compatibility across versions.</p>
-        </article>
-        <!-- Feature 4: Modular and Scalable -->
-        <article class="feature-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <h3 style="color: var(--primary-color); margin-top: 0;">Modular and Scalable Architecture</h3>
-          <p>Build and manage infrastructure with a modular design that scales effortlessly, supporting growing teams and complex deployments.</p>
-        </article>
-        <!-- Feature 5: Automated Compliance -->
-        <article class="feature-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <h3 style="color: var(--primary-color); margin-top: 0;">Automated Compliance and Security</h3>
-          <p>Ensure infrastructure meets compliance and security standards with automated checks, minimizing manual oversight.</p>
-        </article>
-        <!-- Feature 6: Cross-Platform Compatibility -->
-        <article class="feature-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <h3 style="color: var(--primary-color); margin-top: 0;">Cross-Platform Compatibility</h3>
-          <p>Deploy consistently across cloud providers (AWS, Azure, GCP) and on-premises environments with unified workflows.</p>
-        </article>
-        <!-- Feature 7: Documentation and Community -->
-        <article class="feature-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <h3 style="color: var(--primary-color); margin-top: 0;">Extensive Documentation and Community</h3>
-          <p>Access comprehensive guides and collaborate with an active community to accelerate adoption and innovation.</p>
-        </article>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-particles" aria-hidden="true"></div>
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Open Source Framework</div>
+        <h1>From <span class="gradient-text">Zero</span> to <span class="gradient-text">Zero Touch</span></h1>
+        <p class="hero-subtitle">Apply software development best practices to infrastructure management. A framework that enables large distributed teams to manage Infrastructure as Code with consistency, collaboration, and version-controlled workflows.</p>
+        <div class="hero-cta">
+          <a href="https://idlc-framework.github.io/idlc/docs/getting-started/" class="btn btn-primary">
+            <i class="fas fa-rocket"></i> Get Started
+          </a>
+          <a href="https://github.com/idlc-framework/idlc" class="btn btn-outline" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">8</span>
+            <span class="stat-label">Lifecycle Phases</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Integrated Tools</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Cloud Providers</span>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-    <!-- CTA Section -->
-    <section class="cta" style="text-align: center; padding: 2rem 1rem; background: var(--primary-color); color: #fff;">
-      <h2>Ready to Transform Your Infrastructure?</h2>
-      <p style="font-size: 1.1rem; max-width: 600px; margin: 1rem auto;">
-        Dive into the IDLC Framework and streamline your infrastructure lifecycle today.
-      </p>
-      <a href="{{ '/pages/about.html' | relative_url }}" class="cta-button" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--gradient-bg); color: #fff; border-radius: 4px; text-decoration: none; font-weight: 500; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-        Learn More About IDLC
-      </a>
-    </section>
-  </main>
+  <!-- Taglines Section -->
+  <section class="taglines">
+    <div class="container">
+      <div class="tagline-grid">
+        <div class="tagline-card" data-animate>
+          <div class="tagline-icon"><i class="fas fa-fingerprint"></i></div>
+          <h3>From Zero to Zero Touch</h3>
+          <p>Automate every step from initial setup to production deployment. No manual intervention, no human error, just reliable infrastructure delivery.</p>
+        </div>
+        <div class="tagline-card" data-animate>
+          <div class="tagline-icon"><i class="fas fa-globe"></i></div>
+          <h3>Good for Distributed Teams</h3>
+          <p>Built for teams spread across regions and time zones. Standardized workflows, shared modules, and GitOps ensure everyone speaks the same infrastructure language.</p>
+        </div>
+        <div class="tagline-card" data-animate>
+          <div class="tagline-icon"><i class="fas fa-robot"></i></div>
+          <h3>AI Friendly</h3>
+          <p>Structured, well-documented, and convention-driven. The IDLC framework is designed to be easily understood and operated by AI-powered tools and copilots.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">Core Concepts</span>
+        <h2>Three Building Blocks</h2>
+        <p>The IDLC framework is built on three fundamental layers that create a clear separation of concerns.</p>
+      </div>
+      <div class="features-flow" data-animate>
+        <div class="flow-item">
+          <div class="flow-icon"><i class="fas fa-cube"></i></div>
+          <h4>Modules</h4>
+        </div>
+        <div class="flow-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
+        <div class="flow-item">
+          <div class="flow-icon"><i class="fas fa-cubes"></i></div>
+          <h4>Solutions</h4>
+        </div>
+        <div class="flow-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
+        <div class="flow-item">
+          <div class="flow-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+          <h4>Deployments</h4>
+        </div>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card" data-animate>
+          <div class="feature-card-header">
+            <div class="feature-icon"><i class="fas fa-cube"></i></div>
+            <h3>Modules</h3>
+          </div>
+          <p>Smallest reusable components with well-defined scopes. Each module manages a single cloud resource with strong security defaults, validated inputs, and auto-generated documentation.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Small surface area</li>
+            <li><i class="fas fa-check"></i> Secure by default</li>
+            <li><i class="fas fa-check"></i> Auto-documented</li>
+            <li><i class="fas fa-check"></i> Validated inputs</li>
+          </ul>
+          <div class="feature-code">
+            <pre><code>modules/s3/bucket/
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── versions.tf
+└── README.md</code></pre>
+          </div>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feature-card-header">
+            <div class="feature-icon"><i class="fas fa-cubes"></i></div>
+            <h3>Solutions</h3>
+          </div>
+          <p>Opinionated compositions of modules configured for deployment. Solutions enforce policies, pin module versions, and represent complete services ready to ship.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Compose modules</li>
+            <li><i class="fas fa-check"></i> Enforce policies</li>
+            <li><i class="fas fa-check"></i> Self-contained</li>
+            <li><i class="fas fa-check"></i> Version pinned</li>
+          </ul>
+          <div class="feature-code">
+            <pre><code>solutions/my-app/
+├── main.tf
+├── variables.tf
+├── outputs.tf
+└── CHANGELOG.md</code></pre>
+          </div>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feature-card-header">
+            <div class="feature-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <h3>Deployments</h3>
+          </div>
+          <p>Environment-specific definitions that establish how solutions are utilized. Declarative, pinned versions, Terragrunt-based orchestration across regions.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Environment-specific</li>
+            <li><i class="fas fa-check"></i> Declarative config</li>
+            <li><i class="fas fa-check"></i> Terragrunt-based</li>
+            <li><i class="fas fa-check"></i> Multi-region</li>
+          </ul>
+          <div class="feature-code">
+            <pre><code>deployments/region-1/
+├── stage/
+│   └── my-app/
+└── production/
+    └── my-app/</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="how-it-works">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">Workflow</span>
+        <h2>How It Works</h2>
+        <p>A streamlined workflow from code to production with zero manual intervention.</p>
+      </div>
+      <div class="workflow-timeline">
+        <div class="workflow-step" data-animate>
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Write Modules</h3>
+            <p>Create reusable infrastructure components with strong defaults. Security, encryption, and logging are enabled by default. Every module is auto-documented.</p>
+          </div>
+        </div>
+        <div class="workflow-step" data-animate>
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Compose Solutions</h3>
+            <p>Aggregate modules into opinionated service definitions. Pin versions, enforce policies, and expose only the variables that truly vary across environments.</p>
+          </div>
+        </div>
+        <div class="workflow-step" data-animate>
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Test &amp; Release</h3>
+            <p>Static analysis, plan validation, and integration tests run on every PR. Conventional Commits drive automated semantic versioning and changelog generation.</p>
+          </div>
+        </div>
+        <div class="workflow-step" data-animate>
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Deploy via GitOps</h3>
+            <p>Atlantis plans and applies infrastructure from pull requests. Every change is peer-reviewed, audited, and applied with zero manual intervention in production.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phases Section -->
+  <section id="phases" class="phases">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">Lifecycle</span>
+        <h2>8 Phases, One Framework</h2>
+        <p>The IDLC framework defines 8 phases organized into Development and Operations categories.</p>
+      </div>
+      <div class="phases-wrapper" data-animate>
+        <div class="phases-category">
+          <h3 class="category-label"><i class="fas fa-code"></i> Development</h3>
+          <div class="phases-grid">
+            <div class="phase-card">
+              <div class="phase-number">1</div>
+              <h4>Plan</h4>
+              <p>Define requirements, architecture, and resource dependencies</p>
+            </div>
+            <div class="phase-card">
+              <div class="phase-number">2</div>
+              <h4>Code</h4>
+              <p>Write modules, solutions, and deployment configurations</p>
+            </div>
+            <div class="phase-card">
+              <div class="phase-number">3</div>
+              <h4>Build</h4>
+              <p>Structure and organize IaC into a consistent repository model</p>
+            </div>
+            <div class="phase-card">
+              <div class="phase-number">4</div>
+              <h4>Test</h4>
+              <p>Static analysis, plan validation, integration tests, policy checks</p>
+            </div>
+            <div class="phase-card">
+              <div class="phase-number">5</div>
+              <h4>Release</h4>
+              <p>Automated versioning, changelogs, and registry publishing</p>
+            </div>
+            <div class="phase-card">
+              <div class="phase-number">6</div>
+              <h4>Deploy</h4>
+              <p>GitOps-driven deployment with zero manual intervention</p>
+            </div>
+          </div>
+        </div>
+        <div class="phases-category">
+          <h3 class="category-label"><i class="fas fa-cogs"></i> Operations</h3>
+          <div class="phases-grid phases-grid-ops">
+            <div class="phase-card">
+              <div class="phase-number">7</div>
+              <h4>Operate</h4>
+              <p>Drift detection, patching, scaling, and incident response</p>
+            </div>
+            <div class="phase-card">
+              <div class="phase-number">8</div>
+              <h4>Monitor</h4>
+              <p>Alarms, dashboards, observability, and feedback loops</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toolchain Section -->
+  <section id="toolchain" class="toolchain">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">Stack Set</span>
+        <h2>Curated Toolchain</h2>
+        <p>A proven set of tools that keep Terraform modules reusable, validated, and ready for consumption across teams.</p>
+      </div>
+      <div class="toolchain-grid">
+        <div class="tool-card" data-animate>
+          <div class="tool-icon"><i class="fas fa-box-open"></i></div>
+          <h3>Terrareg</h3>
+          <p>Private module registry — publish, discover, and consume versioned modules with access controls and searchable metadata.</p>
+          <span class="tool-role">Registry</span>
+        </div>
+        <div class="tool-card" data-animate>
+          <div class="tool-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Terragrunt</h3>
+          <p>DRY orchestration — multi-environment deployments without duplication. Hierarchical config and dependency management.</p>
+          <span class="tool-role">Orchestration</span>
+        </div>
+        <div class="tool-card" data-animate>
+          <div class="tool-icon"><i class="fas fa-code-branch"></i></div>
+          <h3>Atlantis</h3>
+          <p>GitOps automation — plan and apply infrastructure from pull requests. Peer review enforced on every change.</p>
+          <span class="tool-role">GitOps</span>
+        </div>
+        <div class="tool-card" data-animate>
+          <div class="tool-icon"><i class="fas fa-tags"></i></div>
+          <h3>release-please</h3>
+          <p>Automated versioning — changelogs and semantic version tags from Conventional Commits. Monorepo support built-in.</p>
+          <span class="tool-role">Versioning</span>
+        </div>
+        <div class="tool-card" data-animate>
+          <div class="tool-icon"><i class="fas fa-file-alt"></i></div>
+          <h3>terraform-docs</h3>
+          <p>Auto documentation — generate README from module inputs, outputs, and resources. Runs on every commit via pre-commit.</p>
+          <span class="tool-role">Documentation</span>
+        </div>
+      </div>
+      <div class="toolchain-flow" data-animate>
+        <div class="flow-label">Operational Rhythm</div>
+        <div class="flow-steps">
+          <span>Publish to Terrareg</span>
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          <span>Orchestrate with Terragrunt</span>
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          <span>Validate with Atlantis</span>
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          <span>Version with release-please</span>
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          <span>Document with terraform-docs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cloud Providers Section -->
+  <section id="cloud" class="cloud">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">Multi-Cloud</span>
+        <h2>Cloud Agnostic by Design</h2>
+        <p>The same principles of modules, solutions, and deployments apply regardless of the underlying cloud provider.</p>
+      </div>
+      <div class="cloud-grid">
+        <div class="cloud-card" data-animate>
+          <div class="cloud-icon"><i class="fab fa-aws"></i></div>
+          <h3>AWS</h3>
+          <p>Full reference implementation with production-ready module library</p>
+          <span class="cloud-status status-active">Reference Implementation</span>
+        </div>
+        <div class="cloud-card" data-animate>
+          <div class="cloud-icon"><i class="fab fa-microsoft"></i></div>
+          <h3>Azure</h3>
+          <p>Framework compatible with patterns defined and modules in development</p>
+          <span class="cloud-status status-ready">Framework Ready</span>
+        </div>
+        <div class="cloud-card" data-animate>
+          <div class="cloud-icon"><i class="fab fa-google"></i></div>
+          <h3>GCP</h3>
+          <p>Framework compatible with patterns defined and modules in development</p>
+          <span class="cloud-status status-ready">Framework Ready</span>
+        </div>
+      </div>
+      <div class="cloud-principles" data-animate>
+        <h3>Provider-Agnostic Principles</h3>
+        <div class="principles-grid">
+          <div class="principle">
+            <i class="fas fa-shield-alt"></i>
+            <span>Modules enforce security defaults</span>
+          </div>
+          <div class="principle">
+            <i class="fas fa-lock"></i>
+            <span>Solutions pin versions and policies</span>
+          </div>
+          <div class="principle">
+            <i class="fas fa-file-code"></i>
+            <span>Deployments are declarative</span>
+          </div>
+          <div class="principle">
+            <i class="fas fa-code-branch"></i>
+            <span>All changes go through GitOps</span>
+          </div>
+          <div class="principle">
+            <i class="fas fa-tag"></i>
+            <span>Semantic versioning everywhere</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Repository Structure Section -->
+  <section class="repo-structure">
+    <div class="container">
+      <div class="repo-layout" data-animate>
+        <div class="repo-info">
+          <span class="section-tag">Getting Started</span>
+          <h2>Clean Repository Structure</h2>
+          <p>An IDLC repository follows a three-tier structure that scales from a single team to an entire organization.</p>
+          <div class="repo-features">
+            <div class="repo-feature">
+              <i class="fas fa-folder-open"></i>
+              <div>
+                <h4>modules/</h4>
+                <p>Reusable infrastructure components</p>
+              </div>
+            </div>
+            <div class="repo-feature">
+              <i class="fas fa-puzzle-piece"></i>
+              <div>
+                <h4>solutions/</h4>
+                <p>Service compositions</p>
+              </div>
+            </div>
+            <div class="repo-feature">
+              <i class="fas fa-server"></i>
+              <div>
+                <h4>deployments/</h4>
+                <p>Environment-specific configurations</p>
+              </div>
+            </div>
+          </div>
+          <a href="https://idlc-framework.github.io/idlc/docs/getting-started/" class="btn btn-primary">
+            <i class="fas fa-book"></i> Read the Docs
+          </a>
+        </div>
+        <div class="repo-code">
+          <div class="code-window">
+            <div class="code-header">
+              <span class="code-dot red" aria-hidden="true"></span>
+              <span class="code-dot yellow" aria-hidden="true"></span>
+              <span class="code-dot green" aria-hidden="true"></span>
+              <span class="code-title">your-idlc-repo/</span>
+            </div>
+            <pre><code><span class="code-folder">├── modules/</span>
+│   ├── s3/
+│   │   └── bucket/
+│   ├── rds/
+│   │   ├── postgres-database/
+│   │   └── alarms/
+│   └── eks/
+│       ├── cluster/
+│       └── karpenter/
+<span class="code-folder">├── solutions/</span>
+│   ├── my-app/
+│   └── my-database/
+<span class="code-folder">├── deployments/</span>
+│   ├── region-1/
+│   │   ├── stage/
+│   │   └── production/
+│   └── region-2/
+│       └── production/
+<span class="code-folder">└── .github/</span>
+    └── workflows/</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content" data-animate>
+        <h2>Ready to go from <span class="gradient-text">Zero</span> to <span class="gradient-text">Zero Touch</span>?</h2>
+        <p>Start building infrastructure the right way. Open source, battle-tested, and ready for your team.</p>
+        <div class="cta-buttons">
+          <a href="https://idlc-framework.github.io/idlc/docs/getting-started/" class="btn btn-primary btn-lg">
+            <i class="fas fa-rocket"></i> Get Started Now
+          </a>
+          <a href="https://github.com/idlc-framework/idlc" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i> Star on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="IDLC Logo" class="footer-logo">
+          <h3>IDLC Framework</h3>
+          <p>Infrastructure Development Lifecycle. Apply software development best practices to infrastructure management.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Documentation</h4>
+          <ul>
+            <li><a href="https://idlc-framework.github.io/idlc/docs/getting-started/">Getting Started</a></li>
+            <li><a href="https://idlc-framework.github.io/idlc/docs/concepts/">Core Concepts</a></li>
+            <li><a href="https://idlc-framework.github.io/idlc/docs/phases/">Phases</a></li>
+            <li><a href="https://idlc-framework.github.io/idlc/docs/stackset/">Stack Set</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/idlc-framework/idlc" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://github.com/idlc-framework/idlc/issues" target="_blank" rel="noopener">Issues</a></li>
+            <li><a href="https://github.com/idlc-framework/idlc/discussions" target="_blank" rel="noopener">Discussions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 IDLC Framework. Open Source under MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>
 </html>

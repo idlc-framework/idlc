@@ -1,8 +1,8 @@
 ---
 title: Pre-commit Hooks
 layout: default
-parent: Getting Started
-nav_order: 1
+parent: Stack Set
+nav_order: 6
 ---
 
 # Pre-commit Hooks

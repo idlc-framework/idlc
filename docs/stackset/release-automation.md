@@ -1,8 +1,8 @@
 ---
 title: Release Automation
 layout: default
-parent: Getting Started
-nav_order: 2
+parent: Stack Set
+nav_order: 7
 ---
 
 # Release Automation
