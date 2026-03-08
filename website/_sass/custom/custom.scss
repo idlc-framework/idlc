@@ -1,0 +1,52 @@
+// IDLC custom overrides for just-the-docs
+
+// Teal link color to match website
+.site-nav .nav-list-item .nav-list-link.active,
+.site-nav .nav-list-item .nav-list-link:hover {
+  color: #0f7b6c;
+}
+
+.btn-primary {
+  background-color: #2dd4a8;
+  background-image: linear-gradient(#3de8bc, #2dd4a8);
+}
+
+// Allow the header to grow for logo + text
+.site-header {
+  height: auto !important;
+  max-height: none !important;
+}
+
+// Layout: logo on left, text on right — single row
+.site-title {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 10px;
+  height: auto !important;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+// Logo on the left (natural DOM order)
+.site-logo {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  flex: 0 0 32px !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// Text on the right
+.site-title::after {
+  content: "IDLC Docs";
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #27262b;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
