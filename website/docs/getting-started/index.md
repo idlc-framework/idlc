@@ -159,7 +159,7 @@ We use `tenv` to manage OpenTofu/Terraform/Terragrunt versions. If you have `tfe
 
 ## Next Steps
 
-- Explore the [Core Concepts]({{ "/docs/concepts.html" | relative_url }}) — Modules, Solutions, and Deployments
-- Understand the [8 Phases]({{ "/docs/phases.html" | relative_url }}) of the lifecycle
-- Review the [Stack Set]({{ "/docs/stackset.html" | relative_url }}) toolchain
-- Check [Cloud Provider]({{ "/docs/cloud-providers.html" | relative_url }}) support
+- Explore the [Core Concepts]({{ "/docs/concepts/" | relative_url }}) — Modules, Solutions, and Deployments
+- Understand the [8 Phases]({{ "/docs/phases/" | relative_url }}) of the lifecycle
+- Review the [Stack Set]({{ "/docs/stackset/" | relative_url }}) toolchain
+- Check [Cloud Provider]({{ "/docs/cloud-providers/" | relative_url }}) support
