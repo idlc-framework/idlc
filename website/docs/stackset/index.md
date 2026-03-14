@@ -14,13 +14,13 @@ The IDLC framework relies on a curated set of tools that keep Terraform modules 
 
 | Tool | Role in IDLC |
 |:-----|:-------------|
-| [Terrareg]({{ "/docs/stackset/terrareg/" | relative_url }}) | Private module registry — publish, discover, and consume modules |
-| [Terragrunt]({{ "/docs/stackset/terragrunt/" | relative_url }}) | DRY orchestration — multi-environment deployments without duplication |
-| [Atlantis]({{ "/docs/stackset/atlantis/" | relative_url }}) | GitOps — plan and apply infrastructure from pull requests |
-| [release-please]({{ "/docs/stackset/release-please/" | relative_url }}) | Automated versioning — changelogs and semantic tags from commits |
-| [terraform-docs]({{ "/docs/stackset/terraform-docs/" | relative_url }}) | Auto documentation — generate README from module inputs/outputs |
-| [Pre-commit Hooks]({{ "/docs/stackset/pre-commit/" | relative_url }}) | Code quality — enforce formatting, linting, and docs on every commit |
-| [Release Automation]({{ "/docs/stackset/release-automation/" | relative_url }}) | CI/CD — automated versioning and registry publishing workflows |
+| [Terrareg]({{ "/docs/stackset/terrareg.html" | relative_url }}) | Private module registry — publish, discover, and consume modules |
+| [Terragrunt]({{ "/docs/stackset/terragrunt.html" | relative_url }}) | DRY orchestration — multi-environment deployments without duplication |
+| [Atlantis]({{ "/docs/stackset/atlantis.html" | relative_url }}) | GitOps — plan and apply infrastructure from pull requests |
+| [release-please]({{ "/docs/stackset/release-please.html" | relative_url }}) | Automated versioning — changelogs and semantic tags from commits |
+| [terraform-docs]({{ "/docs/stackset/terraform-docs.html" | relative_url }}) | Auto documentation — generate README from module inputs/outputs |
+| [Pre-commit Hooks]({{ "/docs/stackset/pre-commit.html" | relative_url }}) | Code quality — enforce formatting, linting, and docs on every commit |
+| [Release Automation]({{ "/docs/stackset/release-automation.html" | relative_url }}) | CI/CD — automated versioning and registry publishing workflows |
 
 ## Operational Rhythm
 
