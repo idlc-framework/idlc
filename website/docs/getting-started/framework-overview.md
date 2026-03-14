@@ -146,6 +146,6 @@ sequenceDiagram
 
 ## Next Steps
 
-- Deep dive into [Modules]({{ "/docs/concepts/modules/" | relative_url }}), [Solutions]({{ "/docs/concepts/solutions/" | relative_url }}), and [Deployments]({{ "/docs/concepts/deployments/" | relative_url }})
+- Deep dive into [Modules]({{ "/docs/concepts/modules.html" | relative_url }}), [Solutions]({{ "/docs/concepts/solutions.html" | relative_url }}), and [Deployments]({{ "/docs/concepts/deployments.html" | relative_url }})
 - Explore the [8 Phases]({{ "/docs/phases/" | relative_url }}) in detail
 - Review the [Stack Set]({{ "/docs/stackset/" | relative_url }}) toolchain
