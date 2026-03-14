@@ -19,7 +19,7 @@ Apply software development best practices to infrastructure management.
 
 ## What is IDLC?
 
-IDLC stands for **Infrastructure as Code Development Lifecycle**. It is a framework that integrates software development practices into infrastructure management, enabling large distributed teams to manage infrastructure as code with consistency, collaboration, and version-controlled workflows.
+IDLC stands for **IaC Development Lifecycle**. It is a framework that integrates software development practices into infrastructure management, enabling large distributed teams to manage infrastructure as code with consistency, collaboration, and version-controlled workflows.
 
 The framework is built around **8 phases** that mirror the software development lifecycle, adapted specifically for Infrastructure as Code (IaC):
 
