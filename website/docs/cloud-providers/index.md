@@ -14,9 +14,9 @@ The IDLC framework is cloud-agnostic by design. The same principles of modules, 
 
 | Provider | Status | Description |
 |:---------|:-------|:------------|
-| [AWS]({{ "/docs/cloud-providers/aws/" | relative_url }}) | Reference implementation | Full module library with production examples |
-| [Azure]({{ "/docs/cloud-providers/azure/" | relative_url }}) | Framework ready | Patterns defined, modules in development |
-| [GCP]({{ "/docs/cloud-providers/gcp/" | relative_url }}) | Framework ready | Patterns defined, modules in development |
+| [AWS]({{ "/docs/cloud-providers/aws.html" | relative_url }}) | Reference implementation | Full module library with production examples |
+| [Azure]({{ "/docs/cloud-providers/azure.html" | relative_url }}) | Framework ready | Patterns defined, modules in development |
+| [GCP]({{ "/docs/cloud-providers/gcp.html" | relative_url }}) | Framework ready | Patterns defined, modules in development |
 
 ## Multi-Cloud Strategy
 
