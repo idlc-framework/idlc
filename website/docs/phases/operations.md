@@ -12,5 +12,5 @@ The operations phases cover day-2 activities: keeping infrastructure healthy, ob
 
 | Phase | Focus |
 |:------|:------|
-| [Operate]({{ "/docs/phases/operate/" | relative_url }}) | Day-2 operations and maintenance |
-| [Monitor]({{ "/docs/phases/monitor/" | relative_url }}) | Observe, alert, and feedback into the cycle |
+| [Operate]({{ "/docs/phases/operate.html" | relative_url }}) | Day-2 operations and maintenance |
+| [Monitor]({{ "/docs/phases/monitor.html" | relative_url }}) | Observe, alert, and feedback into the cycle |
