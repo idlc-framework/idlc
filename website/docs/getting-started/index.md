@@ -30,26 +30,28 @@ Every team reinvents the wheel. Security defaults are inconsistent. There's no s
 
 ## The IDLC Solution
 
-```
-┌─────────────────────────────────────────────────────┐
-│                   IDLC Framework                     │
-│                                                      │
-│  ┌──────────┐   ┌──────────┐   ┌──────────────┐    │
-│  │ Modules  │──▶│Solutions │──▶│ Deployments  │    │
-│  │ (reuse)  │   │(compose) │   │ (ship)       │    │
-│  └──────────┘   └──────────┘   └──────────────┘    │
-│                                                      │
-│  ┌──────────────────────────────────────────────┐   │
-│  │         8 Phases (Plan → Monitor)             │   │
-│  └──────────────────────────────────────────────┘   │
-│                                                      │
-│  ┌──────────────────────────────────────────────┐   │
-│  │    Stack Set (Terrareg, Terragrunt, Atlantis, │   │
-│  │    release-please, terraform-docs, pre-commit)│   │
-│  └──────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────┘
-         │           │           │           │
-     DevOps      DataOps      MLOps      SecOps
+```mermaid
+graph TB
+    subgraph IDLC["IDLC Framework"]
+        subgraph layers["Infrastructure Layers"]
+            direction LR
+            M["Modules<br>(reuse)"] --> S["Solutions<br>(compose)"] --> D["Deployments<br>(ship)"]
+        end
+        subgraph eight-phases["8 Phases (Plan → Monitor)"]
+        end
+        subgraph stack["Stack Set"]
+            T["Terrareg · Terragrunt · Atlantis · release-please · terraform-docs · pre-commit"]
+        end
+    end
+    IDLC --> DevOps
+    IDLC --> DataOps
+    IDLC --> MLOps
+    IDLC --> SecOps
+
+    style DevOps fill:#eaf4fb,stroke:#3498db,color:#2c3e50
+    style DataOps fill:#eaf4fb,stroke:#3498db,color:#2c3e50
+    style MLOps fill:#eaf4fb,stroke:#3498db,color:#2c3e50
+    style SecOps fill:#eaf4fb,stroke:#3498db,color:#2c3e50
 ```
 
 With IDLC, every team follows the same structure:
@@ -87,24 +89,18 @@ When every team follows the same patterns, AI copilots become dramatically more 
 
 The framework defines 8 phases that mirror the software development lifecycle:
 
-```
-  ┌──────────────────────────────────────────────┐
-  │              DEVELOPMENT                      │
-  │                                               │
-  │   Plan ──▶ Code ──▶ Build ──▶ Test ──▶       │
-  │                                    │          │
-  │                              Release ──▶      │
-  │                                    │          │
-  │                               Deploy          │
-  └────────────────────────────────┬───────────── │
-                                   │
-  ┌────────────────────────────────▼──────────────┐
-  │              OPERATIONS                        │
-  │                                                │
-  │          Operate ──▶ Monitor ──┐               │
-  │                                │               │
-  │          ◀─── Feedback Loop ◀──┘               │
-  └────────────────────────────────────────────────┘
+```mermaid
+graph TB
+    subgraph DEV["DEVELOPMENT"]
+      direction LR
+        Plan["Plan"] --> Code --> Build --> Test --> Release --> Deploy --> Plan
+    end
+    subgraph OPS["OPERATIONS"]
+        direction LR
+        Operate --> Monitor
+    end
+    DEV --> OPS
+    Monitor -->|Feedback Loop| DEV
 ```
 
 Each phase has clear responsibilities, tooling, and outputs. The Operations phases feed insights back into the next development cycle, creating a continuous improvement loop.

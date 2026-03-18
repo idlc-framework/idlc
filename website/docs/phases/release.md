@@ -36,8 +36,8 @@ rds-postgres-database@v1.3.0
 eks-cluster@v1.6.2
 
 # Solutions
-blu-my-app@v2.1.0
-blu-my-database@v2.1.1
+sol-my-app@v2.1.0
+sol-my-database@v2.1.1
 ```
 
 ## Private Registry (Terrareg)

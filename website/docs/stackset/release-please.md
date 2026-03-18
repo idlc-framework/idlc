@@ -58,7 +58,7 @@ For monorepos, scope your commits to the affected package:
 ```
 feat(s3-bucket): add CORS configuration support
 fix(rds-postgres-database): correct parameter group association
-feat(blu-my-app)!: require eks_cluster_names as list
+feat(sol-my-app)!: require eks_cluster_names as list
 ```
 
 ## Configuration
